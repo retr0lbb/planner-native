@@ -39,7 +39,7 @@ export function Modal({
                 <Text className="text-white font-medium text-xl">{title}</Text>
 
                 {onClose && (
-                  <TouchableOpacity activeOpacity={0.7} onPress={onClose}>
+                  <TouchableOpacity style={{ padding: 8}} activeOpacity={0.7} onPress={onClose}>
                     <X color={colors.zinc[400]} size={20} />
                   </TouchableOpacity>
                 )}
