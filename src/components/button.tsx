@@ -35,7 +35,17 @@ function Button({ variant = "primary", isLoading = false , children, ...rest}: B
 function Title({children}: TextProps){
     const { variant } = useContext(themeContext)
     return (
-        <Text>{children}</Text>
+        <Text
+            className={clsx(
+                "text-base font-semibold",
+                {
+                    "text-lime-950" : variant === "primary",
+                    "text-zinc-200" : variant === "secondary"
+                }
+            )}
+        >
+            {children}
+        </Text>
     )
 }
 
