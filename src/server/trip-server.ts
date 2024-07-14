@@ -25,7 +25,7 @@ async function getById(id: string) {
 
 async function create({destination, ends_at, starts_at, emails_to_invite}: TripCreate) {
     try {
-        const { data } = await api.post<{ tripId: string}>("/trips", {
+        const { data } = await api.post<{ data: string}>("/trips", {
             destination,
             emails_to_invite,
             ends_at,
@@ -34,8 +34,10 @@ async function create({destination, ends_at, starts_at, emails_to_invite}: TripC
             owner_email: "retr0lbb@gmail.com"
         })
 
+        return {tripId: data.data}
 
     } catch (error) {
+        console.log(error)
         throw error
     }
 }
