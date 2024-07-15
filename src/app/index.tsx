@@ -153,7 +153,7 @@ export default function Index(){
     }, [])
 
     
-    if(isCreatingTrip){
+    if(isGettingTrip){
         return <Loading />
     }
 
